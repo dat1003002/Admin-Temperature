@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TemperatureApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TemperatureApp.styles.css" asp-append-version="true" />
+    <!-- Thêm CDN của Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-black box-shadow">
+            <div class="container-fluid d-flex align-items-center">
+                <div>
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img class="logo-drb" src="~/img/avatars/logo-3.jpg" alt="logo" />
+                    </a>
+                </div>
+                <div class="mx-auto">
+                    <span class="navbar-text">
+                        HỆ THỐNG QUẢN LÝ HMI
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="navr-menu">
+        <div class="list-menu">
+            <div class="menu-room">
+                <select id="select1">
+                    <option value="#">BanBury</option>
+                </select>
+            </div>
+            <div class="menu-room">
+                <select id="select2" onchange="handleSelectChange(this)">
+                    <option value="@Url.Action("Index", "Home", new { area = "" })" data-url="/Home/Index">PHÒNG LẠNH 1</option>
+                    <option value="@Url.Action("Index", "PhongLanh2")" data-url="/PhongLanh2">PHÒNG LẠNH 2</option>
+                    <option value="@Url.Action("Index", "Room2")" data-url="/Room2">PHÒNG CÂN</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+    <script>
+        window.onload = function () {
+            const selectElement = document.getElementById('select2'); // Lấy thẻ select
+            const currentUrl = window.location.pathname; // Lấy URL hiện tại, ví dụ: "/Room2"
+            Array.from(selectElement.options).forEach(option => {
+                if (option.getAttribute('data-url') === currentUrl) {
+                    selectElement.value = option.value; // Đặt giá trị của select theo URL
+                }
+            });
+        };
+
+        function handleSelectChange(selectElement) {
+            const selectedValue = selectElement.value; // Lấy URL từ value của option
+            if (selectedValue !== "#") {
+                window.location.href = selectedValue; // Chuyển hướng trang
+            }
+        }
+
+    </script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Thêm CDN của Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

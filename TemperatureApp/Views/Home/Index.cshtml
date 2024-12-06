@@ -1,0 +1,143 @@
+﻿@{
+    ViewData["Title"] = "Phòng Lạnh 1";
+}
+<div class="list-searchroom">
+    <div class="search-chart">
+        <div class="search-date">
+            <label>Từ Ngày :</label>
+            <input type="datetime-local" id="startDate"
+                   value="@ViewData["StartDate"]"
+                   onchange="filterByDate()" />
+        </div>
+        <div class="search-date">
+            <label>Đến Ngày :</label>
+            <input type="datetime-local" id="endDate"
+                   value="@ViewData["EndDate"]"
+                   onchange="filterByDate()" />
+        </div>
+    </div>
+    <div class="excel-control">
+        <button onclick="exportToExcel()">Excel <img class="logo-drb" src="~/img/avatars/file-upload.png" alt="logo" /></button>
+    </div>
+</div>
+
+<div class="chart-room" style="width: 100%; height: 85vh; background:black;">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+   const canvas = document.getElementById('myChart');
+
+// Lấy dữ liệu từ ViewData
+const labels = @Html.Raw(Json.Serialize(ViewData["Labels"]));
+const room01Temp = @Html.Raw(Json.Serialize(ViewData["Room01_Temp"]));
+const room01TempH = @Html.Raw(Json.Serialize(ViewData["Room01_TempH"]));
+const room01TempL = @Html.Raw(Json.Serialize(ViewData["Room01_TempL"]));
+const room01Setup = @Html.Raw(Json.Serialize(ViewData["Room01_Setup"]));
+
+const maxTemp = Math.max(...room01Temp, ...room01TempH, ...room01TempL, ...room01Setup) + 0.5;
+const minTemp = Math.min(...room01Temp, ...room01TempH, ...room01TempL, ...room01Setup) - 0.5;
+
+// Kiểm tra điều kiện và thay đổi màu nếu cần
+const tempColor = room01Temp.some(temp => temp > room01TempH || temp < room01TempL) 
+    ? 'rgb(255, 0, 0)' // Màu đỏ nếu điều kiện thỏa
+    : 'rgb(75, 192, 192)'; // Màu xanh nếu không thỏa
+
+const data = {
+    labels: labels,
+    datasets: [
+        {
+            label: 'Nhiệt Độ Hiện Tại',
+            data: room01Temp,
+            borderColor: tempColor, // Đặt màu dựa trên điều kiện
+            tension: 0.1,
+        },
+        {
+            label: 'Nhiệt Độ Setup Cao',
+            data: room01TempH,
+            borderColor: 'rgb(148, 0, 0)', // Màu Đỏ
+            tension: 0.1,
+        },
+        {
+            label: 'Nhiệt Độ Setup Thấp',
+            data: room01TempL,
+            borderColor: 'rgb(255, 99, 132)', 
+            tension: 0.1,
+        },
+        {
+            label: 'Nhiệt Độ Setup',
+            data: room01Setup,
+            borderColor: 'rgb(255, 206, 86)', // Màu Vàng
+            tension: 0.1,
+        },
+    ],
+};
+
+const config = {
+    type: 'line',
+    data: data,
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    color: 'white',
+                },
+            },
+            title: {
+                display: true,
+                text: 'Biểu đồ nhiệt độ',
+                color: 'white',
+                font: {
+                    size: 18,
+                    weight: 'bold',
+                },
+            },
+        },
+        scales: {
+            x: {
+                ticks: {
+                    color: 'white',
+                },
+                grid: {
+                    color: 'white',
+                },
+            },
+            y: {
+                ticks: {
+                    color: 'white',
+                },
+                grid: {
+                    color: 'white',
+                },
+                suggestedMax: maxTemp,
+                suggestedMin: minTemp,
+            },
+        },
+    },
+};
+
+const ctx = canvas.getContext('2d');
+new Chart(ctx, config);
+
+function filterByDate() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (startDate && endDate) {
+            const url = `/Home/Index?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+            window.location.href = url;
+        }
+    }
+
+    function exportToExcel() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (startDate && endDate) {
+            const url = `/Home/ExportToExcel?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+            window.location.href = url;
+        } else {
+            alert("Vui lòng chọn khoảng thời gian trước khi xuất Excel!");
+        }
+    }
+</script>

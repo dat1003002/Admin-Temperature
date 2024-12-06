@@ -1,0 +1,166 @@
+﻿@{
+    ViewData["Title"] = "Phòng Cân";
+}
+<div class="list-searchroom">
+    <div class="search-chart">
+        <div class="search-date">
+            <label for="startDate">Từ Ngày:</label>
+            <input type="datetime-local" id="startDate"
+                   value="@ViewData["StartDate"]"
+                   onchange="filterByDate()" />
+        </div>
+        <div class="search-date">
+            <label for="endDate">Đến Ngày:</label>
+            <input type="datetime-local" id="endDate"
+                   value="@ViewData["EndDate"]"
+                   onchange="filterByDate()" />
+        </div>
+    </div>
+    <div class="excel-control">
+        <button onclick="exportToExcelPc()">Excel <img class="logo-drb" src="~/img/avatars/file-upload.png" alt="logo" /></button>
+    </div>
+</div>
+
+<div class="chart-room" style="width: 100%; height: 85vh; background: black;">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+  const canvas = document.getElementById('myChart');
+
+// Lấy dữ liệu từ ViewData và chuyển thành JSON
+const labels = @Html.Raw(Json.Serialize(ViewData["Labels"]));
+const MS2Temp = @Html.Raw(Json.Serialize(ViewData["MS2_Temp"]));
+const MS2Setup = @Html.Raw(Json.Serialize(ViewData["MS2_Setup"]));
+const MS2TempH = @Html.Raw(Json.Serialize(ViewData["MS2_TempH"]));
+const MS2TempL = @Html.Raw(Json.Serialize(ViewData["MS2_TempL"]));
+
+// Tính giá trị lớn nhất và nhỏ nhất trong dữ liệu để điều chỉnh tỷ lệ biểu đồ
+const maxTemp = Math.max(...MS2TempH, ...MS2TempL) + 0.5;
+const minTemp = Math.min(...MS2TempH, ...MS2TempL) - 0.5;
+
+// Hàm để kiểm tra màu sắc của điểm dữ liệu
+const getColorForTemperature = (temp, tempH, tempL) => {
+    if (temp > tempH) {
+        return 'rgb(255, 0, 0)'; // Màu đỏ nếu cao hơn giới hạn cao
+    } else if (temp < tempL) {
+        return 'rgb(255, 0, 0)'; // Màu đỏ nếu thấp hơn giới hạn thấp
+    } else {
+        return 'rgb(75, 192, 192)'; // Màu xanh bình thường
+    }
+};
+
+// Đánh dấu nhiệt độ hiện tại (MS2Temp) vi phạm
+const MS2TempColors = MS2Temp.map((temp, index) => getColorForTemperature(temp, MS2TempH[index], MS2TempL[index]));
+
+const data = {
+    labels: labels,
+    datasets: [
+        {
+            label: 'Nhiệt Độ Hiện Tại',
+            data: MS2Temp,
+            pointBackgroundColor: MS2TempColors, // Màu sắc cho từng điểm dữ liệu
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)', // Đường kẻ bình thường
+            tension: 0.1
+        },
+        {
+            label: 'Nhiệt Độ Setup',
+            data: MS2Setup,
+            fill: false,
+            borderColor: 'rgb(255, 206, 86)', // Màu vàng cho setup
+            tension: 0.1
+        },
+        {
+            label: 'Nhiệt Độ Setup Cao',
+            data: MS2TempH,
+            fill: false,
+            borderColor: 'rgb(148, 0, 0)', // Màu đỏ cho setup cao
+            tension: 0.1
+        },
+        {
+            label: 'Nhiệt Độ Setup Thấp',
+            data: MS2TempL,
+            fill: false,
+            borderColor: 'rgb(255, 99, 132)', // Màu hồng cho setup thấp
+            tension: 0.1
+        }
+    ]
+};
+
+const config = {
+    type: 'line',
+    data: data,
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    color: 'white'
+                }
+            },
+            title: {
+                display: true,
+                text: 'Biểu đồ nhiệt độ',
+                color: 'white',
+                font: {
+                    size: 18,
+                    weight: 'bold'
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    label: function (tooltipItem) {
+                        return `${tooltipItem.dataset.label}: ${tooltipItem.raw}°C`;
+                    }
+                }
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    color: 'white'
+                },
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.1)'
+                }
+            },
+            y: {
+                ticks: {
+                    color: 'white'
+                },
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.1)'
+                },
+                suggestedMax: maxTemp,
+                suggestedMin: minTemp
+            }
+        }
+    }
+};
+
+const ctx = canvas.getContext('2d');
+new Chart(ctx, config);
+
+
+    function filterByDate() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (startDate && endDate) {
+            const url = `Room2?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+            window.location.href = url;
+        }
+    }
+
+     function exportToExcelPc() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (startDate && endDate) {
+            const url = `/Room2/ExportToExcel?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+            window.location.href = url;
+        } else {
+            alert("Vui lòng chọn ngày bắt đầu và ngày kết thúc.");
+        }
+    }
+</script>
