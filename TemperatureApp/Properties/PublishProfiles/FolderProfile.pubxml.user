@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <History>True|2024-12-06T09:05:22.0881403Z||;False|2024-12-06T15:51:42.5007071+07:00||;False|2024-12-06T15:49:42.8110587+07:00||;True|2024-12-06T15:31:11.1114051+07:00||;True|2024-12-06T15:04:14.0563959+07:00||;True|2024-12-06T14:56:27.3894798+07:00||;True|2024-12-06T14:45:30.0286178+07:00||;True|2024-12-06T13:48:42.7917226+07:00||;False|2024-12-06T13:36:20.9527548+07:00||;False|2024-12-06T13:36:14.4729202+07:00||;False|2024-12-06T13:32:57.2341311+07:00||;False|2024-12-06T13:31:18.3400511+07:00||;False|2024-12-06T13:31:09.5858765+07:00||;False|2024-12-06T13:30:48.0821014+07:00||;</History>
+    <LastFailureDetails />
+    <_PublishTargetUrl>D:\TemperatureApp\TemperatureApp\bin\Release\net8.0\publish\</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

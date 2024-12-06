@@ -1,0 +1,125 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 0px;
+}
+canvas {
+    width: 100%!important;
+}
+.navbar-brand img {
+    width: 13rem;
+}
+.navbar-text {
+    font-size: 28px;
+    font-weight: 600;
+    font-family: none;
+    color: red !important;
+}
+
+.navbar {
+    height: 62px;
+}
+#myChart {
+    width: 100%;
+}
+.container {
+    max-width: 100%;
+    padding: 0px;
+}
+.navr-menu {
+    height: 45px;
+    width: 100%;
+    background: #000; /* Nền đen */
+    display: flex;
+    align-items: center;
+    position: relative; /* Để định vị lớp gradient */
+}
+
+    .navr-menu::before {
+        content: "";
+        position: absolute;
+        top: 0; /* Gradient bắt đầu từ trên */
+        left: 0;
+        width: 100%; /* Chiều rộng của gradient */
+        height: 45px; /* Chiều cao đổ bóng */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)); /* Gradient trắng và đen mờ hài hòa */
+        z-index: 1; /* Gradient nằm trên nền background */
+        pointer-events: none; /* Không cản trở tương tác */
+    }
+
+.list-menu {
+    margin-right: 10%;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    gap: 190px;
+}
+.list-searchroom {
+    height: 30px;
+    background: #8f8f8f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu-room label {
+    color: white;
+    font-size: 18px;
+    font-family: auto;
+}
+.menu-room select {
+    width: 150px;
+    background: #676767;
+    color: #27ff26;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+.search-chart {
+    margin-right: 10%;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.search-date label {
+    color: #27ff26;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: system-ui;
+}
+.search-date input {
+    background: #cdcdcd; 
+}
+.export-execl {
+    width: 80%;
+}
+.excel-control button {
+    background: #cdcdcd;
+    width: 80px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: serif;
+}
+.excel-control {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
