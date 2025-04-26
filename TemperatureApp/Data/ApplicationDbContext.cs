@@ -11,5 +11,9 @@ namespace TemperatureApp.Data
         public DbSet<MS_1> MS_1 { get; set; }
         public DbSet<MS_2> MS_2 { get; set; }
         public DbSet<MS_3> MS_3 { get; set; }
+        public DbSet<boiler_3> boiler_3 { get; set; }
+        public DbSet<boiler_4> boiler_4 { get; set; }
+        public DbSet<boiler_5> boiler_5 { get; set; }
+
     }
 }

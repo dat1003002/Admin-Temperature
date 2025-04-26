@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dGYqb5k7qIA=",
+  "dgSpecHash": "wQW6fSJJsD8=",
   "success": true,
-  "projectFilePath": "D:\\TemperatureApp\\TemperatureApp\\TemperatureApp.csproj",
+  "projectFilePath": "D:\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

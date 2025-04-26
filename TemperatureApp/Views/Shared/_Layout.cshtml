@@ -3,11 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TemperatureApp</title>
+    <title>TemperatureApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/TemperatureApp.styles.css" asp-append-version="true" />
-    <!-- Thêm CDN của Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -20,25 +18,33 @@
                     </a>
                 </div>
                 <div class="mx-auto">
-                    <span class="navbar-text">
-                        HỆ THỐNG QUẢN LÝ HMI
-                    </span>
+                    <span class="navbar-text">HỆ THỐNG QUẢN LÝ HMI</span>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="navr-menu">
         <div class="list-menu">
             <div class="menu-room">
-                <select id="select1">
-                    <option value="#">BanBury</option>
+                <select id="select1" onchange="toggleSelectOptions()">
+                    <option value="banbury">BanBury</option>
+                    <option value="baotri">Bảo Trì</option>
                 </select>
             </div>
-            <div class="menu-room">
-                <select id="select2" onchange="handleSelectChange(this)">
-                    <option value="@Url.Action("Index", "Home", new { area = "" })" data-url="/Home/Index">PHÒNG LẠNH 1</option>
-                    <option value="@Url.Action("Index", "PhongLanh2")" data-url="/PhongLanh2">PHÒNG LẠNH 2</option>
-                    <option value="@Url.Action("Index", "Room2")" data-url="/Room2">PHÒNG CÂN</option>
+
+            <div class="menu-room" id="banbury-select">
+                <select id="select2" onchange="handleSelectChange(this, 'selectedOption2')">
+                    <option value="/Home/Index" data-url="/Home/Index">PHÒNG LẠNH 1</option>
+                    <option value="/PhongLanh2" data-url="/PhongLanh2">PHÒNG LẠNH 2</option>
+                    <option value="/Room2" data-url="/Room2">PHÒNG CÂN</option>
+                </select>
+            </div>
+            <div class="menu-room" id="baotri-select" style="display: none;">
+                <select id="select3" onchange="handleSelectChange(this, 'selectedOption3')">
+                    <option value="/Lohoi3" data-url="/Lohoi3">LÒ HƠI 3</option>
+                    <option value="/Lohoi4" data-url="/Lohoi4">LÒ HƠI 4</option>
+                    <option value="/Lohoi5" data-url="/Lohoi5">LÒ HƠI 5</option>
                 </select>
             </div>
         </div>
@@ -49,33 +55,80 @@
             @RenderBody()
         </main>
     </div>
+
     <script>
-        window.onload = function () {
-            const selectElement = document.getElementById('select2'); // Lấy thẻ select
-            const currentUrl = window.location.pathname; // Lấy URL hiện tại, ví dụ: "/Room2"
-            Array.from(selectElement.options).forEach(option => {
-                if (option.getAttribute('data-url') === currentUrl) {
-                    selectElement.value = option.value; // Đặt giá trị của select theo URL
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy giá trị từ sessionStorage
+            const savedSelect1Value = sessionStorage.getItem("selectedOption1");
+            const savedSelect2Value = sessionStorage.getItem("selectedOption2");
+            const savedSelect3Value = sessionStorage.getItem("selectedOption3");
+            const currentPath = window.location.pathname;
+
+            // Nếu không có giá trị trong sessionStorage (lần đầu trong phiên)
+            if (!savedSelect1Value) {
+                // Đặt mặc định là BanBury và Phòng Lạnh 1
+                document.getElementById("select1").value = "banbury";
+                sessionStorage.setItem("selectedOption1", "banbury");
+                document.getElementById("select2").value = "/Home/Index";
+                sessionStorage.setItem("selectedOption2", "/Home/Index");
+                sessionStorage.removeItem("selectedOption3");
+                toggleSelectOptions();
+                if (currentPath !== "/Home/Index") {
+                    window.location.href = "/Home/Index";
+                }
+            } else {
+                // Khôi phục trạng thái từ sessionStorage
+                document.getElementById("select1").value = savedSelect1Value;
+                toggleSelectOptions();
+
+                if (savedSelect1Value === "banbury" && savedSelect2Value) {
+                    document.getElementById("select2").value = savedSelect2Value;
+                } else if (savedSelect1Value === "baotri" && savedSelect3Value) {
+                    document.getElementById("select3").value = savedSelect3Value;
+                }
+            }
+
+            // Xử lý khi thay đổi select1
+            document.getElementById("select1").addEventListener("change", function () {
+                const selectedValue = this.value;
+                sessionStorage.setItem("selectedOption1", selectedValue);
+                sessionStorage.removeItem("selectedOption2"); // Reset select2 khi chuyển nhóm
+                sessionStorage.removeItem("selectedOption3"); // Reset select3 khi chuyển nhóm
+                toggleSelectOptions();
+
+                // Chuyển hướng dựa trên giá trị của select1
+                if (selectedValue === "baotri") {
+                    document.getElementById("select3").value = "/Lohoi3";
+                    sessionStorage.setItem("selectedOption3", "/Lohoi3");
+                    window.location.href = "/Lohoi3";
+                } else if (selectedValue === "banbury") {
+                    document.getElementById("select2").value = "/Home/Index";
+                    sessionStorage.setItem("selectedOption2", "/Home/Index");
+                    window.location.href = "/Home/Index";
                 }
             });
-        };
+        });
 
-        function handleSelectChange(selectElement) {
-            const selectedValue = selectElement.value; // Lấy URL từ value của option
-            if (selectedValue !== "#") {
-                window.location.href = selectedValue; // Chuyển hướng trang
-            }
+        function toggleSelectOptions() {
+            const select1Value = document.getElementById("select1").value;
+            document.getElementById("banbury-select").style.display = select1Value === "banbury" ? "block" : "none";
+            document.getElementById("baotri-select").style.display = select1Value === "baotri" ? "block" : "none";
         }
 
-    </script>
+        function handleSelectChange(selectElement, storageKey) {
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const url = selectedOption.getAttribute("data-url");
 
+            if (url) {
+                sessionStorage.setItem(storageKey, selectElement.value); // Lưu giá trị đã chọn
+                window.location.href = url;
+            }
+        }
+    </script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
-    <!-- Thêm CDN của Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -128,7 +128,6 @@ namespace TemperatureApp.Controllers
                     var stream = new MemoryStream();
                     package.SaveAs(stream);
                     stream.Position = 0;
-
                     string excelName = $"Data_{DateTime.Now:yyyyMMddHHmmss}.xlsx";
                     return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
                 }

@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "LÒ HƠI 5";
+}
+<div class="list-searchroom">
+    <div class="search-chart">
+        <div class="search-date">
+            <label for="startDate">Từ Ngày:</label>
+            <input type="datetime-local" id="startDate"
+                   value="@ViewData["StartDate"]"
+                   onchange="filterByDate()" />
+        </div>
+        <div class="search-date">
+            <label for="endDate">Đến Ngày:</label>
+            <input type="datetime-local" id="endDate"
+                   value="@ViewData["EndDate"]"
+                   onchange="filterByDate()" />
+        </div>
+    </div>
+    <div class="excel-control">
+        <button onclick="exportToExcelPL()">Excel <img class="logo-drb" src="~/img/avatars/file-upload.png" alt="logo" /></button>
+    </div>
+</div>
+
+<div class="chart-container" style="height: 85vh; background: black;">
+    <canvas id="boilerChart"></canvas>
+</div>
+
+<script>
+    function filterByDate() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (startDate && endDate) {
+            window.location.href = `?startDate=${startDate}&endDate=${endDate}`;
+        }
+    }
+
+    function exportToExcelPL() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (!startDate || !endDate) {
+            alert("Vui lòng chọn khoảng thời gian để xuất Excel!");
+            return;
+        }
+
+        window.location.href = `/Lohoi5/ExportToExcel?startDate=${startDate}&endDate=${endDate}`;
+    }
+
+    const labels = @Html.Raw(Json.Serialize(ViewData["Labels"]));
+    const pressureTT = @Html.Raw(Json.Serialize(ViewData["Pressure_TT"]));
+    const fanInTT = @Html.Raw(Json.Serialize(ViewData["FanIn_TT"]));
+    const fanOutTT = @Html.Raw(Json.Serialize(ViewData["FanOut_TT"]));
+
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Áp Lực TT',
+                data: pressureTT,
+                borderColor: 'rgb(54, 162, 235)',
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                fill: false,
+                tension: 0.1
+            },
+            {
+                label: 'Quạt đầu vào TT',
+                data: fanInTT,
+                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                fill: false,
+                tension: 0.1
+            },
+            {
+                label: 'Quạt đầu ra TT',
+                data: fanOutTT,
+                borderColor: 'rgb(255, 159, 64)',
+                backgroundColor: 'rgba(255, 159, 64, 0.5)',
+                fill: false,
+                tension: 0.1
+            }
+        ]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Biểu đồ thông số Lò Hơi 5',
+                    color: 'white',
+                    font: {
+                        size: 18,
+                        weight: 'bold'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: 'white'
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: 'white'
+                    }
+                }
+            }
+        }
+    };
+
+    const ctx = document.getElementById('boilerChart').getContext('2d');
+    new Chart(ctx, config);
+</script>

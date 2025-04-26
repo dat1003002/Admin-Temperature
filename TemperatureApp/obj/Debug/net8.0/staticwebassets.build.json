@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZolrOv2icjbr9BEv3n0RL1HSKQNtQNQaOt6rb2GFbes=",
+  "Hash": "wVDT9+9pJLlyOb04C6mTi4ilvjijt/ZWeZ2QGYZubRA=",
   "Source": "TemperatureApp",
   "BasePath": "_content/TemperatureApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "TemperatureApp\\wwwroot",
       "Source": "TemperatureApp",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TemperatureApp.styles.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TemperatureApp.styles.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "TemperatureApp.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\TemperatureApp\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TemperatureApp.styles.css"
+      "OriginalItemSpec": "D:\\Admin-Temperature\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TemperatureApp.styles.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TemperatureApp.bundle.scp.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TemperatureApp.bundle.scp.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "TemperatureApp.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\TemperatureApp\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TemperatureApp.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Admin-Temperature\\TemperatureApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TemperatureApp.bundle.scp.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\css\\site.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\css\\site.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\favicon.ico",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\favicon.ico",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\img\\avatars\\file-upload.png",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\img\\avatars\\file-upload.png",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "img/avatars/file-upload.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\img\\avatars\\file-upload.png"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\img\\avatars\\logo-3.jpg",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\img\\avatars\\logo-3.jpg",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "img/avatars/logo-3.jpg",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\img\\avatars\\logo-3.jpg"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\img\\avatars\\logodrb.png",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\img\\avatars\\logodrb.png",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "img/avatars/logodrb.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\img\\avatars\\logodrb.png"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\img\\avatars\\upload.png",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\img\\avatars\\upload.png",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "img/avatars/upload.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\img\\avatars\\upload.png"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\js\\site.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\js\\site.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1176,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1195,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "TemperatureApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TemperatureApp\\TemperatureApp\\wwwroot\\",
+      "ContentRoot": "D:\\Admin-Temperature\\TemperatureApp\\wwwroot\\",
       "BasePath": "_content/TemperatureApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
