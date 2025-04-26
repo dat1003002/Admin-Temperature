@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TemperatureApp\\TemperatureApp\\TemperatureApp.csproj": {}
+    "D:\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj": {}
   },
   "projects": {
-    "D:\\TemperatureApp\\TemperatureApp\\TemperatureApp.csproj": {
+    "D:\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TemperatureApp\\TemperatureApp\\TemperatureApp.csproj",
+        "projectUniqueName": "D:\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj",
         "projectName": "TemperatureApp",
-        "projectPath": "D:\\TemperatureApp\\TemperatureApp\\TemperatureApp.csproj",
+        "projectPath": "D:\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\TemperatureApp\\TemperatureApp\\obj\\",
+        "outputPath": "D:\\Admin-Temperature\\TemperatureApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
