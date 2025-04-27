@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "LÒ HƠI 5";
 }
+
 <div class="list-searchroom">
     <div class="search-chart">
         <div class="search-date">
@@ -21,102 +22,178 @@
     </div>
 </div>
 
-<div class="chart-container" style="height: 85vh; background: black;">
+<!-- Hiển thị thông báo lỗi hoặc cảnh báo -->
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger" style="margin-top: 10px;">
+        @TempData["Error"]
+    </div>
+}
+@if (TempData["Warning"] != null)
+{
+    <div class="alert alert-warning" style="margin-top: 10px;">
+        @TempData["Warning"]
+    </div>
+}
+
+<!-- Checkbox và toggle switch điều khiển -->
+<div class="checkbox-controls" style="color: white; background: black; display:flex; justify-content: center; align-items: center;">
+    <label style="margin-right: 20px; color: rgb(54, 162, 235);">
+        <input type="checkbox" id="hideAPTC" checked onchange="toggleDataset(0)"> Áp lực tiêu chuẩn
+    </label>
+    <label style="margin-right: 20px; color: rgb(75, 192, 192);">
+        <input type="checkbox" id="hideAPTT" checked onchange="toggleDataset(1)"> Áp lực thực tế
+    </label>
+    <label style="margin-right: 20px; color: rgb(255, 159, 64);">
+        <input type="checkbox" id="hideMUCNUOC" checked onchange="toggleDataset(2)"> Mực nước
+    </label>
+    <label style="margin-right: 20px; color: rgb(255, 99, 132); display: flex; align-items: center;">
+        <span style="margin-right: 8px;">Trạng thái:</span>
+        <label class="switch">
+            <input type="checkbox" id="statusToggle" disabled @((ViewData["TRANGTHAI"] != null && ((List<int>)ViewData["TRANGTHAI"]).LastOrDefault() == 1) ? "checked" : "")>
+            <span class="slider round"></span>
+        </label>
+        <span style="margin-left: 8px;">@((ViewData["TRANGTHAI"] != null && ((List<int>)ViewData["TRANGTHAI"]).LastOrDefault() == 1) ? "Bật" : "Tắt")</span>
+    </label>
+</div>
+
+<div class="chart-container" style="height: 83vh; background: black;">
     <canvas id="boilerChart"></canvas>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    let chart;
+
     function filterByDate() {
         const startDate = document.getElementById('startDate').value;
-        const endDate = document.getElementById('endDate').value;
+        const rubble = document.getElementById('endDate').value;
 
-        if (startDate && endDate) {
-            window.location.href = `?startDate=${startDate}&endDate=${endDate}`;
+        if (startDate && rubble) {
+            const url = `Lohoi5?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(rubble)}`;
+            window.location.href = url;
         }
     }
 
     function exportToExcelPL() {
         const startDate = document.getElementById('startDate').value;
-        const endDate = document.getElementById('endDate').value;
+        const rubble = document.getElementById('endDate').value;
 
-        if (!startDate || !endDate) {
-            alert("Vui lòng chọn khoảng thời gian để xuất Excel!");
+        if (!startDate || !rubble) {
+            alert("Vui lòng chọn ngày bắt đầu và ngày kết thúc!");
             return;
         }
 
-        window.location.href = `/Lohoi5/ExportToExcel?startDate=${startDate}&endDate=${endDate}`;
+        const url = `/Lohoi5/ExportToExcel?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(rubble)}`;
+        window.location.href = url;
+    }
+
+    function toggleDataset(index) {
+        const meta = chart.getDatasetMeta(index);
+        meta.hidden = !meta.hidden;
+        chart.update();
     }
 
     const labels = @Html.Raw(Json.Serialize(ViewData["Labels"]));
-    const pressureTT = @Html.Raw(Json.Serialize(ViewData["Pressure_TT"]));
-    const fanInTT = @Html.Raw(Json.Serialize(ViewData["FanIn_TT"]));
-    const fanOutTT = @Html.Raw(Json.Serialize(ViewData["FanOut_TT"]));
+    const aptc = @Html.Raw(Json.Serialize(ViewData["APTC"])); // Đã chia cho 10 từ backend
+    const aptt = @Html.Raw(Json.Serialize(ViewData["APTT"])); // Đã chia cho 10 từ backend
+    const mucnuoc = @Html.Raw(Json.Serialize(ViewData["MUCNUOC"])); // Đã chia cho 10 từ backend
 
-    const data = {
-        labels: labels,
-        datasets: [
-            {
-                label: 'Áp Lực TT',
-                data: pressureTT,
-                borderColor: 'rgb(54, 162, 235)',
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                fill: false,
-                tension: 0.1
-            },
-            {
-                label: 'Quạt đầu vào TT',
-                data: fanInTT,
-                borderColor: 'rgb(75, 192, 192)',
-                backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                fill: false,
-                tension: 0.1
-            },
-            {
-                label: 'Quạt đầu ra TT',
-                data: fanOutTT,
-                borderColor: 'rgb(255, 159, 64)',
-                backgroundColor: 'rgba(255, 159, 64, 0.5)',
-                fill: false,
-                tension: 0.1
-            }
-        ]
-    };
+    // Kiểm tra dữ liệu rỗng
+    if (!labels || labels.length === 0) {
+        document.getElementById('boilerChart').style.display = 'none';
+        alert("Không có dữ liệu để hiển thị biểu đồ!");
+    } else {
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Áp lực tiêu chuẩn',
+                    data: aptc,
+                    borderColor: 'rgb(54, 162, 235)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    fill: false,
+                    tension: 0.1
+                },
+                {
+                    label: 'Áp lực thực tế',
+                    data: aptt,
+                    borderColor: 'rgb(75, 192, 192)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    fill: false,
+                    tension: 0.1
+                },
+                {
+                    label: 'Mực nước',
+                    data: mucnuoc,
+                    borderColor: 'rgb(255, 159, 64)',
+                    backgroundColor: 'rgba(255, 159, 64, 0.5)',
+                    fill: false,
+                    tension: 0.1
+                }
+            ]
+        };
 
-    const config = {
-        type: 'line',
-        data: data,
-        options: {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: 'white'
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Biểu đồ thông số Lò Hơi 5',
+                        color: 'white',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        }
                     }
                 },
-                title: {
-                    display: true,
-                    text: 'Biểu đồ thông số Lò Hơi 5',
-                    color: 'white',
-                    font: {
-                        size: 18,
-                        weight: 'bold'
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        color: 'white'
-                    }
-                },
-                y: {
-                    ticks: {
-                        color: 'white'
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Thời gian',
+                            color: 'white',
+                            font: {
+                                size: 14
+                            }
+                        },
+                        ticks: {
+                            color: 'white',
+                            maxRotation: 45,
+                            minRotation: 45
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.2)'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Giá trị',
+                            color: 'white',
+                            font: {
+                                size: 14
+                            }
+                        },
+                        ticks: {
+                            color: 'white'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.2)'
+                        }
                     }
                 }
             }
-        }
-    };
+        };
 
-    const ctx = document.getElementById('boilerChart').getContext('2d');
-    new Chart(ctx, config);
+        const ctx = document.getElementById('boilerChart').getContext('2d');
+        chart = new Chart(ctx, config);
+    }
 </script>
