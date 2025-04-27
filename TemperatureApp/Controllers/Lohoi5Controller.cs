@@ -1,8 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using TemperatureApp.Services;
+using TemperatureApp.Models;
+using System;
+using System.Threading.Tasks;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
+using System.IO;
 using TemperatureApp.Data;
-using TemperatureApp.Services;
 
 namespace TemperatureApp.Controllers
 {
@@ -11,12 +17,14 @@ namespace TemperatureApp.Controllers
         private readonly ILogger<Lohoi5Controller> _logger;
         private readonly DatabaseService _databaseService;
         private readonly ApplicationDbContext _context;
+
         public Lohoi5Controller(ILogger<Lohoi5Controller> logger, DatabaseService databaseService, ApplicationDbContext context)
         {
             _logger = logger;
             _databaseService = databaseService;
             _context = context;
         }
+
         public async Task<IActionResult> IndexAsync(DateTime? startDate, DateTime? endDate)
         {
             try
@@ -24,14 +32,21 @@ namespace TemperatureApp.Controllers
                 if (!await _databaseService.CanConnectAsync())
                 {
                     _logger.LogWarning("Không thể kết nối đến SQL Server.");
-                    return View(); // Hiển thị view trống nếu không kết nối được
+                    TempData["Error"] = "Không thể kết nối đến cơ sở dữ liệu. Vui lòng thử lại sau.";
+                    return View();
                 }
 
-                var query = _context.boiler_5.AsQueryable();
+                var query = _context.BTLH5.AsQueryable();
 
                 if (startDate.HasValue && endDate.HasValue)
                 {
-                    DateTime adjustedEndDate = endDate.Value.AddSeconds(59).AddMicroseconds(999);
+                    if (startDate > endDate)
+                    {
+                        TempData["Error"] = "Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc.";
+                        return View();
+                    }
+
+                    DateTime adjustedEndDate = endDate.Value.AddSeconds(59).AddMilliseconds(999);
                     query = query.Where(x => x.TIME >= startDate && x.TIME <= adjustedEndDate);
                 }
 
@@ -39,26 +54,32 @@ namespace TemperatureApp.Controllers
                     ? query.OrderByDescending(x => x.TIME).ToListAsync()
                     : query.OrderByDescending(x => x.TIME).Take(50).ToListAsync());
 
-                data.Reverse();
+                data.Reverse(); // Đảo ngược để hiển thị theo thứ tự thời gian tăng dần
 
-                var pressureTT = data.Select(x => x.PRESSURE_TT).ToList();
-                var fanInTT = data.Select(x => x.FANIN_TT).ToList();
-                var fanOutTT = data.Select(x => x.FANOUT_TT).ToList();
-                var labels = data.Select(x => x.TIME.ToString("yyyy-MM-dd HH:mm")).ToList();
+                if (!data.Any())
+                {
+                    TempData["Warning"] = "Không tìm thấy dữ liệu trong khoảng thời gian đã chọn.";
+                }
 
-                ViewData["Pressure_TT"] = pressureTT;
-                ViewData["FanIn_TT"] = fanInTT;
-                ViewData["FanOut_TT"] = fanOutTT;
-                ViewData["Labels"] = labels;
+                // Chia APTC, APTT và MUCNUOC cho 10
+                ViewData["APTC"] = data.Select(x => x.APTC / 10.0).ToList();
+                ViewData["APTT"] = data.Select(x => x.APTT / 10.0).ToList();
+                ViewData["MUCNUOC"] = data.Select(x => x.MUCNUOC / 10.0).ToList();
+                ViewData["TRANGTHAI"] = data.Select(x => x.TRANGTHAI ? 1 : 0).ToList();
+                ViewData["Labels"] = data.Select(x => x.TIME.ToString("yyyy-MM-dd HH:mm:ss")).ToList();
                 ViewData["StartDate"] = startDate?.ToString("yyyy-MM-ddTHH:mm");
                 ViewData["EndDate"] = endDate?.ToString("yyyy-MM-ddTHH:mm");
+
+                return View();
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Lỗi khi xử lý Lohoi5: {ex.Message}");
+                TempData["Error"] = "Đã xảy ra lỗi khi tải dữ liệu. Vui lòng thử lại.";
+                return View();
             }
-            return View();
         }
+
         public async Task<IActionResult> ExportToExcel(DateTime? startDate, DateTime? endDate)
         {
             try
@@ -68,9 +89,15 @@ namespace TemperatureApp.Controllers
                     return BadRequest("Vui lòng chọn ngày bắt đầu và ngày kết thúc.");
                 }
 
-                var data = await _context.boiler_5
-                    .Where(x => x.TIME >= startDate && x.TIME <= endDate)
-                    .OrderByDescending(x => x.TIME)
+                if (startDate > endDate)
+                {
+                    return BadRequest("Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc.");
+                }
+
+                DateTime adjustedEndDate = endDate.Value.AddSeconds(59).AddMilliseconds(999);
+                var data = await _context.BTLH5
+                    .Where(x => x.TIME >= startDate && x.TIME <= adjustedEndDate)
+                    .OrderBy(x => x.TIME)
                     .ToListAsync();
 
                 if (!data.Any())
@@ -83,22 +110,21 @@ namespace TemperatureApp.Controllers
                 {
                     var worksheet = package.Workbook.Worksheets.Add("Dữ liệu Lò Hơi 5");
 
-                    // Tiêu đề cột
-                    var headers = new string[] { "Thời gian",  "Áp lực TT",  "Quạt vào TT",  "Quạt ra TT" };
+                    var headers = new[] { "Thời gian", "Áp lực tiêu chuẩn", "Áp lực thực tế", "Mực nước", "Trạng thái" };
                     for (int i = 0; i < headers.Length; i++)
                     {
                         worksheet.Cells[1, i + 1].Value = headers[i];
                         worksheet.Cells[1, i + 1].Style.Font.Bold = true;
                     }
 
-                    // Đổ dữ liệu
                     for (int i = 0; i < data.Count; i++)
                     {
                         var item = data[i];
-                        worksheet.Cells[i + 2, 1].Value = item.TIME.ToString("yyyy-MM-dd HH:mm");
-                        worksheet.Cells[i + 2, 2].Value = item.PRESSURE_TT;
-                        worksheet.Cells[i + 2, 3].Value = item.FANIN_TT;
-                        worksheet.Cells[i + 2, 4].Value = item.FANOUT_TT;
+                        worksheet.Cells[i + 2, 1].Value = item.TIME.ToString("yyyy-MM-dd HH:mm:ss");
+                        worksheet.Cells[i + 2, 2].Value = item.APTC / 10.0; // Chia cho 10
+                        worksheet.Cells[i + 2, 3].Value = item.APTT / 10.0; // Chia cho 10
+                        worksheet.Cells[i + 2, 4].Value = item.MUCNUOC / 10.0; // Chia cho 10
+                        worksheet.Cells[i + 2, 5].Value = item.TRANGTHAI ? "Bật" : "Tắt";
                     }
 
                     worksheet.Cells.AutoFitColumns();

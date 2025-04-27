@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj": {}
+    "C:\\Users\\admin\\Documents\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj": {}
   },
   "projects": {
-    "D:\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj": {
+    "C:\\Users\\admin\\Documents\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj",
         "projectName": "TemperatureApp",
-        "projectPath": "D:\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj",
+        "projectPath": "C:\\Users\\admin\\Documents\\Admin-Temperature\\TemperatureApp\\TemperatureApp.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Admin-Temperature\\TemperatureApp\\obj\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\Admin-Temperature\\TemperatureApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -57,6 +57,10 @@
             "EPPlus": {
               "target": "Package",
               "version": "[7.5.1, )"
+            },
+            "FSharp.Data": {
+              "target": "Package",
+              "version": "[6.6.0, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
@@ -116,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

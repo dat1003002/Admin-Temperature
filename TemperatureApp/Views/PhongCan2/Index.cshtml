@@ -1,0 +1,156 @@
+﻿@{
+    ViewData["Title"] = "Phòng Cân 2";
+}
+<div class="list-searchroom">
+    <div class="search-chart">
+        <div class="search-date">
+            <label for="startDate">Từ Ngày:</label>
+            <input type="datetime-local" id="startDate"
+                   value="@ViewData["StartDate"]"
+                   onchange="filterByDate()" />
+        </div>
+        <div class="search-date">
+            <label for="endDate">Đến Ngày:</label>
+            <input type="datetime-local" id="endDate"
+                   value="@ViewData["EndDate"]"
+                   onchange="filterByDate()" />
+        </div>
+    </div>
+    <div class="excel-control">
+        <button onclick="exportToExcelPC()">Excel <img class="logo-drb" src="~/img/avatars/file-upload.png" alt="logo" /></button>
+    </div>
+</div>
+
+<div class="chart-room" style="width: 100%; height: 85vh; background: black;">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+    const canvas = document.getElementById('myChart');
+
+    // Lấy dữ liệu từ ViewData
+    const labels = @Html.Raw(Json.Serialize(ViewData["Labels"]));
+    const MS4Temp = @Html.Raw(Json.Serialize(ViewData["Room04_Temp"]));
+    const MS4TempH = @Html.Raw(Json.Serialize(ViewData["Room04_TempH"]));
+    const MS4TempL = @Html.Raw(Json.Serialize(ViewData["Room04_TempL"]));
+    const MS4Setup = @Html.Raw(Json.Serialize(ViewData["Room04_Setup"]));
+
+    // Tìm giá trị lớn nhất và nhỏ nhất
+    const maxTemp = Math.max(...MS4Temp, ...MS4TempH, ...MS4TempL, ...MS4Setup) + 0.5;
+    const minTemp = Math.min(...MS4Temp, ...MS4TempH, ...MS4TempL, ...MS4Setup) - 0.5;
+
+    // Đánh dấu nhiệt độ hiện tại vi phạm
+    const MS4TempColors = MS4Temp.map((temp, index) => {
+        if (temp > MS4TempH[index] || temp < MS4TempL[index]) {
+            return 'rgb(255, 0, 0)';
+        }
+        return 'rgb(75, 192, 192)';
+    });
+
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Nhiệt Độ Hiện Tại',
+                data: MS4Temp,
+                pointBackgroundColor: MS4TempColors,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            },
+            {
+                label: 'Nhiệt Độ Setup Cao',
+                data: MS4TempH,
+                borderColor: 'rgb(148, 0, 0)',
+                tension: 0.1
+            },
+            {
+                label: 'Nhiệt Độ Setup Thấp',
+                data: MS4TempL,
+                borderColor: 'rgb(255, 99, 132)',
+                tension: 0.1
+            },
+            {
+                label: 'Nhiệt Độ Setup',
+                data: MS4Setup,
+                borderColor: 'rgb(255, 206, 86)',
+                tension: 0.1
+            }
+        ]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Biểu đồ nhiệt độ Phòng Cân 2',
+                    color: 'white',
+                    font: {
+                        size: 18,
+                        weight: 'bold'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (tooltipItem) {
+                            return `${tooltipItem.dataset.label}: ${tooltipItem.raw}°C`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: 'white'
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: 'white'
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    },
+                    suggestedMax: maxTemp,
+                    suggestedMin: minTemp
+                }
+            }
+        }
+    };
+
+    const ctx = canvas.getContext('2d');
+    new Chart(ctx, config);
+
+    function filterByDate() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (startDate && endDate) {
+            const url = `/PhongCan2/Index?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+            window.location.href = url;
+        }
+    }
+
+    function exportToExcelPC() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (!startDate || !endDate) {
+            alert("Vui lòng chọn ngày bắt đầu và ngày kết thúc!");
+            return;
+        }
+
+        const url = `/PhongCan2/ExportToExcel?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+        window.location.href = url;
+    }
+</script>
