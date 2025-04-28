@@ -16,8 +16,8 @@ namespace TemperatureApp.Data
         public DbSet<MS_1> MS_1 { get; set; }
         public DbSet<MS_2> MS_2 { get; set; }
         public DbSet<MS_3> MS_3 { get; set; }
-        public DbSet<MS_4> MS_4 { get; set; }
-        public DbSet<MS_5> MS_5 { get; set; }
+        //public DbSet<MS_4> MS_4 { get; set; }
+        //public DbSet<MS_5> MS_5 { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
