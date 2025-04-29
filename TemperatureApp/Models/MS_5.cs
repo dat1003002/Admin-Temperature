@@ -2,11 +2,11 @@
 {
     public class MS_5
     {
-        public int id;
-        public int MS5_Temp;
-        public DateTime MS5_Time;
-        public int MS5_TempH;
-        public int MS5_TempL;
-        public int MS5_setup;
+        public int id { get; set; }
+        public int MS5_Temp { get; set; }
+        public DateTime MS5_Time { get; set; }
+        public int MS5_TempH { get; set; }
+        public int MS5_TempL { get; set; }
+        public int MS5_Setup { get; set; }
     }
 }

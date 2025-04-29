@@ -1,0 +1,224 @@
+﻿@{
+    ViewData["Title"] = "Phòng Cân (DRB2)";
+}
+<div class="list-searchroom">
+    <div class="search-chart">
+        <div class="search-date">
+            <label for="startDate">Từ Ngày:</label>
+            <input type="datetime-local" id="startDate"
+                   value="@ViewData["StartDate"]"
+                   onchange="filterByDate()" />
+        </div>
+        <div class="search-date">
+            <label for="endDate">Đến Ngày:</label>
+            <input type="datetime-local" id="endDate"
+                   value="@ViewData["EndDate"]"
+                   onchange="filterByDate()" />
+        </div>
+    </div>
+    <div class="excel-control">
+        <button onclick="exportToExcelPc()">Excel <img class="logo-drb" src="~/img/avatars/file-upload.png" alt="logo" /></button>
+    </div>
+</div>
+
+<!-- Hiển thị thông báo lỗi hoặc cảnh báo -->
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+@if (TempData["Warning"] != null)
+{
+    <div class="alert alert-warning">
+        @TempData["Warning"]
+    </div>
+}
+
+<!-- Checkbox điều khiển -->
+<div class="checkbox-controls" style="color: white; background: black; display: flex; justify-content: center; align-items: center; padding: 10px;">
+    <label style="margin-right: 20px; color: rgb(75, 192, 192);">
+        <input type="checkbox" id="hideTemp" checked onchange="toggleDataset(0)"> Nhiệt độ hiện tại
+    </label>
+    <label style="margin-right: 20px; color: rgb(255, 206, 86);">
+        <input type="checkbox" id="hideSetup" checked onchange="toggleDataset(1)"> Nhiệt độ cài đặt
+    </label>
+    <label style="margin-right: 20px; color: rgb(148, 0, 0);">
+        <input type="checkbox" id="hideTempH" checked onchange="toggleDataset(2)"> Nhiệt độ cao
+    </label>
+    <label style="margin-right: 20px; color: rgb(255, 99, 132);">
+        <input type="checkbox" id="hideTempL" checked onchange="toggleDataset(3)"> Nhiệt độ thấp
+    </label>
+</div>
+
+<div class="chart-container" style="height: 83vh; background: black;">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    let chart;
+
+    function filterByDate() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (startDate && endDate) {
+            const url = `/PhongCan2/Index?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+            window.location.href = url;
+        }
+    }
+
+    function exportToExcelPc() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (!startDate || !endDate) {
+            alert("Vui lòng chọn ngày bắt đầu và ngày kết thúc!");
+            return;
+        }
+
+        const url = `/PhongCan2/ExportToExcel?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+        window.location.href = url;
+    }
+
+    function toggleDataset(index) {
+        const meta = chart.getDatasetMeta(index);
+        meta.hidden = !meta.hidden;
+        chart.update();
+    }
+
+    const labels = @Html.Raw(Json.Serialize(ViewData["Labels"]));
+    const MS2Temp = @Html.Raw(Json.Serialize(ViewData["MS2_Temp"]));
+    const MS2Setup = @Html.Raw(Json.Serialize(ViewData["MS2_Setup"]));
+    const MS2TempH = @Html.Raw(Json.Serialize(ViewData["MS2_TempH"]));
+    const MS2TempL = @Html.Raw(Json.Serialize(ViewData["MS2_TempL"]));
+
+    // Kiểm tra dữ liệu rỗng
+    if (!labels || labels.length === 0) {
+        document.getElementById('myChart').style.display = 'none';
+        alert("Không có dữ liệu để hiển thị biểu đồ!");
+    } else {
+        // Hàm kiểm tra màu sắc cho điểm dữ liệu
+        const getColorForTemperature = (temp, tempH, tempL) => {
+            if (temp > tempH || temp < tempL) {
+                return 'rgb(255, 0, 0)';
+            }
+            return 'rgb(75, 192, 192)';
+        };
+
+        const MS2TempColors = MS2Temp.map((temp, index) => getColorForTemperature(temp, MS2TempH[index], MS2TempL[index]));
+
+        const maxTemp = Math.max(...MS2TempH, ...MS2TempL) + 0.5;
+        const minTemp = Math.min(...MS2TempH, ...MS2TempL) - 0.5;
+
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Nhiệt Độ Hiện Tại',
+                    data: MS2Temp,
+                    pointBackgroundColor: MS2TempColors,
+                    borderColor: 'rgb(75, 192, 192)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    fill: false,
+                    tension: 0.1
+                },
+                {
+                    label: 'Nhiệt Độ Cài Đặt',
+                    data: MS2Setup,
+                    borderColor: 'rgb(255, 206, 86)',
+                    backgroundColor: 'rgba(255, 206, 86, 0.5)',
+                    fill: false,
+                    tension: 0.1
+                },
+                {
+                    label: 'Nhiệt Độ Cao',
+                    data: MS2TempH,
+                    borderColor: 'rgb(148, 0, 0)',
+                    backgroundColor: 'rgba(148, 0, 0, 0.5)',
+                    fill: false,
+                    tension: 0.1
+                },
+                {
+                    label: 'Nhiệt Độ Thấp',
+                    data: MS2TempL,
+                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    fill: false,
+                    tension: 0.1
+                }
+            ]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                plugins: {
+                    legend: {
+                        display: false // Tắt legend mặc định vì dùng checkbox
+                    },
+                    title: {
+                        display: true,
+                        text: 'Biểu đồ nhiệt độ Phòng Cân (DRB2)',
+                        color: 'white',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return `${tooltipItem.dataset.label}: ${tooltipItem.raw}°C`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Thời gian',
+                            color: 'white',
+                            font: {
+                                size: 14
+                            }
+                        },
+                        ticks: {
+                            color: 'white',
+                            maxRotation: 45,
+                            minRotation: 45
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.2)'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            color: 'white',
+                            font: {
+                                size: 14
+                            }
+                        },
+                        ticks: {
+                            color: 'white'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.2)'
+                        },
+                        suggestedMax: maxTemp,
+                        suggestedMin: minTemp
+                    }
+                }
+            }
+        };
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        chart = new Chart(ctx, config);
+    }
+</script>
