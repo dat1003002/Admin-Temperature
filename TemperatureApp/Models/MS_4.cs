@@ -2,7 +2,7 @@
 {
     public class MS_4
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public int MS4_Temp { get; set; }
         public int MS4_TempH { get; set; }
         public int MS4_TempL { get; set; }
